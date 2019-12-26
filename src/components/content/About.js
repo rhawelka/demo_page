@@ -9,7 +9,7 @@ class About extends Component {
             <div
                 className="text-center"
                 style={{
-                height: "90vh",
+                minHeight: "60vh",
                 fontFamily: '"Comic Sans MS", cursive, sans-serif'
             }}>
                 <div className="p-4">
