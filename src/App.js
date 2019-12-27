@@ -46,11 +46,11 @@ class App extends Component {
                 <div id="pricing">
                     <Pricing/>
                 </div>
-                <div id="contact">
-                    <Contact/>
-                </div>*/}
                 <div>
                     <Partners/>
+                </div>*/}
+                <div id="contact">
+                    <Contact/>
                 </div>
             </div>
         );
