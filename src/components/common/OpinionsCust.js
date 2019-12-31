@@ -1,42 +1,52 @@
 import React, {Component} from 'react'
-import {Carousel} from 'react-bootstrap'
+import {Carousel, Container} from 'react-bootstrap'
 
 export default class OpinionsCust extends Component {
     render() {
-        return (
-            <Carousel>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="holder.js/800x400?text=First slide&bg=373940"
-                        alt="First slide"/>
-                    <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="holder.js/800x400?text=Second slide&bg=282c34"
-                        alt="Third slide"/>
 
-                    <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="holder.js/800x400?text=Third slide&bg=20232a"
-                        alt="Third slide"/>
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
+        const bgImage = "https://images.pexels.com/photos/234527/pexels-photo-234527.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+
+        const containerStyle = {
+            minHeight: "60vh",
+            color: "white",
+            fontFamily: "oswald",
+            backgroundImage: "url(" + bgImage + ")"
+        }
+
+        return (
+            <Container fluid className="bg-dark" style={containerStyle}>
+                <h1 className="text-center p-4">Our clients sentence:</h1>
+                <Carousel>
+                    <Carousel.Item className="p-5 text-center w-100o">
+                        <h2 className="w-75 mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Proin venenatis eros condimentum, euismod elit at, dictum purus.
+                            Suspendisse potenti. Vestibulum iaculis nunc sed lobortis rutrum.
+                        </h2>
+                        <p>
+                            <b>-</b>
+                            Mutare Drake</p>
+                    </Carousel.Item>
+                    <Carousel.Item className="p-5 text-center w-100o">
+                        <h2 className="w-75 mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Proin venenatis eros condimentum, euismod elit at, dictum purus.
+                            Suspendisse potenti. Vestibulum iaculis nunc sed lobortis rutrum dictum purus.
+                        </h2>
+                        <p>
+                            <b>-</b>
+                            Sir Mullich</p>
+                    </Carousel.Item>
+                    <Carousel.Item className="p-5 text-center w-100o">
+                        <h2 className="w-75 mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Proin venenatis eros condimentum, euismod elit at, dictum purus.
+                            Suspendisse potenti.
+                        </h2>
+                        <p>
+                            <b>-</b>
+                            General Kendal</p>
+                    </Carousel.Item>
+                </Carousel>
+            </Container>
+
         )
     }
 }

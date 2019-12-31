@@ -9,10 +9,10 @@ class About extends Component {
             <div
                 className="text-center"
                 style={{
-                minHeight: "60vh",
+                minHeight: "80vh",
                 fontFamily: '"Comic Sans MS", cursive, sans-serif'
             }}>
-                <div className="p-4">
+                <div className="p-4 mt-5">
                     <h3 className="font-weight-bold">About us</h3>
                     <h5>Key features of our company</h5>
                     

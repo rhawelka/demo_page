@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Form, Button} from 'react-bootstrap';
-import ShowModal from './ShowModal';
+import CenteredModal from './Modal';
 
 class ContactForm extends Component {
 
@@ -9,7 +9,8 @@ class ContactForm extends Component {
         nickname: '',
         subject: '',
         message: '',
-        cursorAllowed: 'not-allowed'
+        cursorAllowed: 'not-allowed',
+        modalShow: false
     }
 
     formRef = React.createRef();
@@ -34,8 +35,11 @@ class ContactForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
-        console.log(this.formRef)
+        this.handleShowModal();   
+    }
+
+    handleShowModal = () => {
+        this.setState({modalShow: true});
     }
 
     unlockBtn() {
@@ -50,30 +54,33 @@ class ContactForm extends Component {
         const enabled = this.state.email && this.state.message;
 
         return (
-            <Form className="w-100 p-2 formValid" ref={this.formRef} onSubmit={this.handleSubmit}>
-                <Form.Group>
-                    <Form.Label htmlFor="email">Email:</Form.Label>
+            <Form style={{fontFamily: "oswald"}}
+                className="w-100 p-2 formValid"
+                ref={this.formRef}
+                onSubmit={this.handleSubmit}>
+                <Form.Group className="m-0">
+                    <Form.Label htmlFor="email"></Form.Label>
                     <Form.Control
                         name="email"
                         id="email"
                         type="email"
-                        placeholder="Enter email"
+                        placeholder="Email"
                         value={this.state.email}
                         onChange={this.handleEmailChange}
                         required/>
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label htmlFor="nickname">Nickname:</Form.Label>
+                <Form.Group className="m-0">
+                    <Form.Label htmlFor="nickname"></Form.Label>
                     <Form.Control
                         name="nickname"
                         id="nickname"
                         type="text"
-                        placeholder="Nickname"
+                        placeholder="Name"
                         value={this.state.nickname}
                         onChange={this.handleNicknameChange}/>
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label htmlFor="subject">Subject:</Form.Label>
+                <Form.Group className="m-0">
+                    <Form.Label htmlFor="subject"></Form.Label>
                     <Form.Control
                         name="subject"
                         id="subject"
@@ -82,8 +89,8 @@ class ContactForm extends Component {
                         value={this.state.subject}
                         onChange={this.handleSubjectChange}/>
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label htmlFor="message">Message:</Form.Label>
+                <Form.Group className="m-0">
+                    <Form.Label htmlFor="message"></Form.Label>
                     <Form.Control
                         name="message"
                         id="message"
@@ -103,7 +110,12 @@ class ContactForm extends Component {
                 }}>
                     Submit
                 </Button>
-                <ShowModal emailData={this.state}/>
+                <CenteredModal
+                    emailData={this.state}
+                    show={this.state.modalShow}
+                    onHide={() => {
+                    this.setState({email: '', nickname: '', subject: '', message: '',cursorAllowed: "not-allowed",modalShow: false});
+                }}/>
             </Form>
 
         )
@@ -111,3 +123,4 @@ class ContactForm extends Component {
 }
 
 export default ContactForm;
+

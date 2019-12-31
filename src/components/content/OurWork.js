@@ -5,16 +5,16 @@ class OurWork extends Component {
     render() {
         return (
             <Container
-                className="pt-4"
+                className="py-4 mt-4"
                 fluid
                 style={{
-                minHeight: "60vh",
+                minHeight: "80vh",
                 backgroundColor: "#333333",
                 color: "white"
             }}>
                 <Row>
                     <Col sm md className="p-2 mt-5 text-center">
-                        <p className="font-weight-bolder p-2">Our Work</p>
+                        <p className="font-weight-bolder p-4">Our Work</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere
                             augue eget ante porttitor fringilla. Aliquam laoreet, sem eu dapibus congue,
                             orem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere augue

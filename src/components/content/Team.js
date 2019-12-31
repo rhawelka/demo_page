@@ -10,9 +10,9 @@ class Team extends Component {
     render() {
         return (
             <Container
-                className="text-center mt-5"
+                className="text-center mt-5 pt-4"
                 style={{
-                minHeight: "60vh",
+                minHeight: "80vh",
                 fontFamily: '"Comic Sans MS", cursive, sans-serif'
             }}>
                 <h3>The team</h3>
